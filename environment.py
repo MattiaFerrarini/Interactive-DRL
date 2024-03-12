@@ -101,7 +101,7 @@ class Env:
                             else:
                                 self.obstacles.append(obs) # add new obstacle
                 
-                # enter: input has terminated
+                # return: input has terminated
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN:
                         running = False

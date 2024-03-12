@@ -1,7 +1,7 @@
 import time
 from environment import Env
 import numpy as np
-from qNetworks import QNetwork
+from qNetwork import QNetwork
 import torch
 
 # the amount of seconds between agent's moves

@@ -1,7 +1,7 @@
 from collections import deque, namedtuple
 import time
 import environment
-import qNetworks
+import qNetwork
 import numpy as np
 import random
 import torch
@@ -88,8 +88,8 @@ def train(rows, cols):
     env = environment.Env(rows, cols)
 
     # initialize the models
-    q_net = qNetworks.QNetwork(STATE_SIZE, NUM_ACTIONS)
-    t_net = qNetworks.QNetwork(STATE_SIZE, NUM_ACTIONS)
+    q_net = qNetwork.QNetwork(STATE_SIZE, NUM_ACTIONS)
+    t_net = qNetwork.QNetwork(STATE_SIZE, NUM_ACTIONS)
     t_net.load_state_dict(q_net.state_dict())
     q_net.init_optimizer()
 
@@ -119,7 +119,7 @@ def train(rows, cols):
 
             # update the models every STEPS_FOR_UPDATE steps
             if (t+1) % STEPS_FOR_UPDATE == 0 and len(memory_buffer) >= MINIBATCH_SIZE:
-                qNetworks.updateModels(q_net, t_net, select_experiences(memory_buffer))
+                qNetwork.updateModels(q_net, t_net, select_experiences(memory_buffer))
 
             # update variables
             state = next_state.copy()
@@ -153,7 +153,7 @@ def train(rows, cols):
 Trains the model and displays the training history
 '''
 if __name__ == "__main__":
-    
+
     rows, cols = input("Insert the number of rows and columns separated by a space: ").split()
     
     # train the agent. Keep track of the training time
