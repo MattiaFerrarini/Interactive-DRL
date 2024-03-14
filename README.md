@@ -1,6 +1,9 @@
 # Interactive DRL
 Interactive environment for training and testing a simple Deep Reinforcement Learning agent based on &epsilon;-Greedy Q-Learning.
 
+![image](https://github.com/MattiaFerrarini/Interactive-DRL/assets/119322415/c2eff230-be90-4cb9-8869-a0453df9fed1)
+
+
 ## Requirements
 ```bash
 Python==3.12.1
