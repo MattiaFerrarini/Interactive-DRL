@@ -36,4 +36,4 @@ When you run `testing.py`, you will be able to create a custom environment to te
 
 ## Notes
 The agent trained is very simple and will probably not perform well in certain environments. <br>
-The goal of the project is simply to experiment with DRL.
+The goal of the project is simply to experiment with DRL and explore its limitations.
